@@ -1,6 +1,20 @@
-﻿# FIND YOUR HAT - CHALLENGE PROJECT
+# FIND YOUR HAT - CHALLENGE PROJECT
 
-## Project Goals
+## INSTRUCTIONS FOR THE PLAYER
+
+- This game is played through the terminal. You gotta have NodeJs installed in your PC. 
+
+- When you start the game, you are the '*' at the screen and, to move anywhere, you gotta type the direction you want to move.
+So, if you want to go left, type 'l'. If you want to go down, type 'd'. If you wish to go right, type 'r', and, finally,
+if you want to up, type 'u'.
+
+- It's a simple and easy, I've done it mainly because of the challenge. There's only one map though (I still have to creat the static method .generateRandomField()).
+
+- That's pretty much it.
+
+- Challenge below 👇
+
+## PROJECT GOALS
 
 * In this project, you’ll be building an interactive terminal game. 
 The scenario is that the player has lost their hat in a field full of holes, 
