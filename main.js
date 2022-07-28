@@ -34,7 +34,7 @@ class Field {
         gameOver = true;
       }
       if ((this.field)[winY][winX] !== '^') {
-        console.log('You found hat! Congrats!');
+        console.log('You found your hat! Congrats!');
         gameOver = true;
       };
       for (let count = 0; count < arrOfHolesCoordinates.length; count++) {
