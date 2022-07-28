@@ -30,11 +30,11 @@ class Field {
 
     testLocation() {
       if((this.x) < 0 || (this.y) < 0 || (this.x) > ((this.field).length - 1) || (this.y) > ((this.field[0]).length - 1)) {
-        console.log('You left out of the map! End of game!');
+        console.log('You left out of the map! O_O!');
         gameOver = true;
       }
       if ((this.field)[winY][winX] !== '^') {
-        console.log('Voce venceu! Parabens, bicha safada!');
+        console.log('You found hat! Congrats!');
         gameOver = true;
       };
       for (let count = 0; count < arrOfHolesCoordinates.length; count++) {
@@ -42,7 +42,7 @@ class Field {
         currentYHole = currentHoleLocation[0];
         currentXHole = currentHoleLocation[1];
         if ((this.field[currentYHole][currentXHole] !== hole)) {
-          console.log('Voce caiu num buraco! Tomate cru!');
+          console.log('Fire into the hole! You died!');
           gameOver = true;
         }
       }
