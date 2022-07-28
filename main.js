@@ -25,10 +25,14 @@ class Field {
   print() {
     for (let i = 0; i < (this.field).length; i++) {
         console.log((this.field[i]).join(''));
-    }
+    };
   }
 
     testLocation() {
+      if((this.x) < 0 || (this.y) < 0 || (this.x) > ((this.field).length - 1) || (this.y) > ((this.field[0]).length - 1)) {
+        console.log('You left out of the map! End of game!');
+        gameOver = true;
+      }
       if ((this.field)[winY][winX] !== '^') {
         console.log('Voce venceu! Parabens, bicha safada!');
         gameOver = true;
@@ -50,8 +54,8 @@ class Field {
           if ((this.field)[i][j] === hat) {
             winY = i;
             winX = j;
-          }
-        }
+          };
+        };
       }
       for (let i = 0; i < (this.field).length; i++) {
         for (let j = 0; j < (this.field)[i].length; j++) {
@@ -73,6 +77,11 @@ class Field {
         } else if (newPlayerPos == 'd') {
             console.clear();
             (this.y)++;
+            if ((this.y) === ((this.field).length)) {
+              console.log('You left out of the map! End of game!');
+              gameOver = true;
+              process.exit();
+            }
             this.field[this.y][this.x] = pathCharacter;
         } else if (newPlayerPos == 'l') {
             console.clear();
@@ -106,7 +115,7 @@ function playGame() {
         myField.testLocation();
         myField.print();
     };
-    }, 5000);
+    }, 1000);
 
 };
 
