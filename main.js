@@ -14,6 +14,26 @@ var currentHoleLocation
 var arrOfHolesCoordinates = [];
 var gameOver = false;
 
+var xPosHat;
+var yPosHat;
+var theHatPosition;
+
+var myNewField;
+var theTrueField = [];
+
+function generateHatPosition(v1, v2) {
+  yPosHat = Math.floor(Math.random() * v1);
+  xPosHat = Math.floor(Math.random() * v2);
+  if (yPosHat == 0 && xPosHat == 0) {
+    thereIsAHat = false;
+  } else {
+    thereIsAHat = true;
+    console.log('Height position: ' + yPosHat);
+    console.log('Width position: ' + xPosHat);
+  }
+  return [yPosHat, xPosHat];
+}
+
 class Field {
     constructor(arrOfField) {
     this.field = arrOfField;
@@ -94,12 +114,37 @@ class Field {
         }   
     }
 
+    static generateField(width, height) {
+      let thereIsAHat = false;
+      let MayThereBeHoles = false;
+      let a = width;
+      let b = height;
+      myNewField = [[fieldCharacter]];
+      for (let c = 1; c < a; c++) {
+        myNewField[0].push(fieldCharacter);
+      };
+      let arrOfNewField = myNewField[0];
+      for (let d = 1; d < b; d++) {
+        myNewField.push(arrOfNewField);
+      };
+      console.log(myNewField);
+      for (let e = 0; e < myNewField.length; e++) {
+        console.log(myNewField[e].join(''))
+      }
+      theHatPosition = generateHatPosition(b, a); 
 
+      myNewField[theHatPosition[0]][theHatPosition[1]] = '^';
+      //Wtf is going on here??? 
+      return myNewField;
+    }
   }
+  
+var randomFieldOutOfNowhere = Field.generateField(5, 4);
+console.log(randomFieldOutOfNowhere);
 
 
-const myField = new Field([
-    ['*', '░', '░', '░', '░'],
+const myField = new Field(
+  [['*', '░', '░', '░', '░'],
     ['░', 'O', '░', 'O', '░'],
     ['░', '░', 'O', 'O', '░'],
     ['░', '░', '^', 'O', '░'],
@@ -119,4 +164,3 @@ function playGame() {
 
 };
 
-playGame();
