@@ -18,6 +18,10 @@ var xPosHat;
 var yPosHat;
 var theHatPosition;
 
+var thereIsAHat = false;
+var MayThereBeHoles = false;
+
+var processIsComplete = false;
 var myNewField;
 var theTrueField = [];
 
@@ -115,11 +119,10 @@ class Field {
     }
 
     static generateField(width, height) {
-      let thereIsAHat = false;
-      let MayThereBeHoles = false;
-      let a = width;
-      let b = height;
-      myNewField = [[fieldCharacter]];
+    let a = width;
+    let b = height;
+    myNewField = [[fieldCharacter]];
+    while (!processIsComplete) {
       for (let c = 1; c < a; c++) {
         myNewField[0].push(fieldCharacter);
       };
@@ -127,18 +130,20 @@ class Field {
       for (let d = 1; d < b; d++) {
         myNewField.push(arrOfNewField);
       };
+      processIsComplete = true;
+    }
       console.log(myNewField);
       for (let e = 0; e < myNewField.length; e++) {
         console.log(myNewField[e].join(''))
       }
-      theHatPosition = generateHatPosition(b, a); 
-
-      myNewField[theHatPosition[0]][theHatPosition[1]] = '^';
+      theHatPosition = generateHatPosition(b, a);
       //Wtf is going on here??? 
+      myNewField[theHatPosition[0]][theHatPosition[1]] = '^';
+      //Why does it not work??? 
       return myNewField;
     }
   }
-  
+
 var randomFieldOutOfNowhere = Field.generateField(5, 4);
 console.log(randomFieldOutOfNowhere);
 
