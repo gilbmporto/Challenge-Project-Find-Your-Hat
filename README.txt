@@ -8,6 +8,9 @@
 So, if you want to go left, type 'l'. If you want to go down, type 'd'. If you wish to go right, type 'r', and, finally,
 if you want to up, type 'u'.
 
+--- 👇 ATTENTION 👇 ---
+- New movements added: Now, the game is capable of generating random fields, but some fields will be impossible of achieving victory if you play it enough times. So, I added the possibility to the user to make diagonal movements ONLY TWO TIMES in order to make the game win possible. So, if you want to JUMP to your upper left, type 'jul'. If you want to JUMP to the upper right direction, type 'jur'. If you wish to JUMP down left, type 'jdl'. Finally, if you have to JUMP down right, type 'jdr'. That's pretty much it.
+
 - It's a simple and easy, I've done it mainly because of the challenge. There's only one map though (I still have to creat the static method .generateRandomField()).
 
 - That's pretty much it.
